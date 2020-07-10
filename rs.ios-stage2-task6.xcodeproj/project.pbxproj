@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E6024B8CEF300A06F32 /* AppDelegate.m */; };
 		32639E6424B8CEF300A06F32 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E6324B8CEF300A06F32 /* SceneDelegate.m */; };
-		32639E6724B8CEF300A06F32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E6624B8CEF300A06F32 /* ViewController.m */; };
 		32639E6A24B8CEF300A06F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6824B8CEF300A06F32 /* Main.storyboard */; };
 		32639E6C24B8CEF300A06F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6B24B8CEF300A06F32 /* Assets.xcassets */; };
-		32639E6F24B8CEF300A06F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6D24B8CEF300A06F32 /* LaunchScreen.storyboard */; };
 		32639E7224B8CEF300A06F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7124B8CEF300A06F32 /* main.m */; };
 		32639E7924B8D19400A06F32 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E7824B8D19400A06F32 /* Icons.xcassets */; };
+		32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7B24B8D37100A06F32 /* RSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,14 +22,13 @@
 		32639E6024B8CEF300A06F32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		32639E6224B8CEF300A06F32 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		32639E6324B8CEF300A06F32 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		32639E6524B8CEF300A06F32 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		32639E6624B8CEF300A06F32 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		32639E6924B8CEF300A06F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32639E6B24B8CEF300A06F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		32639E6E24B8CEF300A06F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32639E7024B8CEF300A06F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32639E7124B8CEF300A06F32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32639E7824B8D19400A06F32 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		32639E7A24B8D37100A06F32 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
+		32639E7B24B8D37100A06F32 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +65,10 @@
 				32639E6024B8CEF300A06F32 /* AppDelegate.m */,
 				32639E6224B8CEF300A06F32 /* SceneDelegate.h */,
 				32639E6324B8CEF300A06F32 /* SceneDelegate.m */,
-				32639E6524B8CEF300A06F32 /* ViewController.h */,
-				32639E6624B8CEF300A06F32 /* ViewController.m */,
+				32639E7A24B8D37100A06F32 /* RSViewController.h */,
+				32639E7B24B8D37100A06F32 /* RSViewController.m */,
 				32639E6824B8CEF300A06F32 /* Main.storyboard */,
 				32639E6B24B8CEF300A06F32 /* Assets.xcassets */,
-				32639E6D24B8CEF300A06F32 /* LaunchScreen.storyboard */,
 				32639E7024B8CEF300A06F32 /* Info.plist */,
 				32639E7124B8CEF300A06F32 /* main.m */,
 				32639E7824B8D19400A06F32 /* Icons.xcassets */,
@@ -136,7 +133,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32639E6F24B8CEF300A06F32 /* LaunchScreen.storyboard in Resources */,
 				32639E6C24B8CEF300A06F32 /* Assets.xcassets in Resources */,
 				32639E7924B8D19400A06F32 /* Icons.xcassets in Resources */,
 				32639E6A24B8CEF300A06F32 /* Main.storyboard in Resources */,
@@ -150,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32639E6724B8CEF300A06F32 /* ViewController.m in Sources */,
 				32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */,
+				32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */,
 				32639E7224B8CEF300A06F32 /* main.m in Sources */,
 				32639E6424B8CEF300A06F32 /* SceneDelegate.m in Sources */,
 			);
@@ -166,14 +162,6 @@
 				32639E6924B8CEF300A06F32 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		32639E6D24B8CEF300A06F32 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32639E6E24B8CEF300A06F32 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -296,6 +284,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4634FD8JW;
 				INFOPLIST_FILE = "rs.ios-stage2-task6/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4634FD8JW;
 				INFOPLIST_FILE = "rs.ios-stage2-task6/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
