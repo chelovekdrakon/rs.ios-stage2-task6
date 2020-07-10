@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E6024B8CEF300A06F32 /* AppDelegate.m */; };
-		32639E6424B8CEF300A06F32 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E6324B8CEF300A06F32 /* SceneDelegate.m */; };
 		32639E6A24B8CEF300A06F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6824B8CEF300A06F32 /* Main.storyboard */; };
 		32639E6C24B8CEF300A06F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6B24B8CEF300A06F32 /* Assets.xcassets */; };
 		32639E7224B8CEF300A06F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7124B8CEF300A06F32 /* main.m */; };
@@ -20,8 +19,6 @@
 		32639E5C24B8CEF300A06F32 /* rs.ios-stage2-task6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rs.ios-stage2-task6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32639E5F24B8CEF300A06F32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32639E6024B8CEF300A06F32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		32639E6224B8CEF300A06F32 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		32639E6324B8CEF300A06F32 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		32639E6924B8CEF300A06F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32639E6B24B8CEF300A06F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32639E7024B8CEF300A06F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,8 +60,6 @@
 			children = (
 				32639E5F24B8CEF300A06F32 /* AppDelegate.h */,
 				32639E6024B8CEF300A06F32 /* AppDelegate.m */,
-				32639E6224B8CEF300A06F32 /* SceneDelegate.h */,
-				32639E6324B8CEF300A06F32 /* SceneDelegate.m */,
 				32639E7A24B8D37100A06F32 /* RSViewController.h */,
 				32639E7B24B8D37100A06F32 /* RSViewController.m */,
 				32639E6824B8CEF300A06F32 /* Main.storyboard */,
@@ -149,7 +144,6 @@
 				32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */,
 				32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */,
 				32639E7224B8CEF300A06F32 /* main.m in Sources */,
-				32639E6424B8CEF300A06F32 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
