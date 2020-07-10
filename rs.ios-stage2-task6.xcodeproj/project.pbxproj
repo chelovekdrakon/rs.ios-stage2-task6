@@ -13,6 +13,7 @@
 		32639E7224B8CEF300A06F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7124B8CEF300A06F32 /* main.m */; };
 		32639E7924B8D19400A06F32 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E7824B8D19400A06F32 /* Icons.xcassets */; };
 		32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7B24B8D37100A06F32 /* RSViewController.m */; };
+		32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		32639E7824B8D19400A06F32 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		32639E7A24B8D37100A06F32 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
 		32639E7B24B8D37100A06F32 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
+		32639E7D24B8D60B00A06F32 /* UIColor+CustomColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColor.h"; sourceTree = "<group>"; };
+		32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +70,18 @@
 				32639E7024B8CEF300A06F32 /* Info.plist */,
 				32639E7124B8CEF300A06F32 /* main.m */,
 				32639E7824B8D19400A06F32 /* Icons.xcassets */,
+				32639E8024B8D61200A06F32 /* categories */,
 			);
 			path = "rs.ios-stage2-task6";
+			sourceTree = "<group>";
+		};
+		32639E8024B8D61200A06F32 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				32639E7D24B8D60B00A06F32 /* UIColor+CustomColor.h */,
+				32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */,
+			);
+			path = categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +156,7 @@
 			files = (
 				32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */,
 				32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */,
+				32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */,
 				32639E7224B8CEF300A06F32 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
