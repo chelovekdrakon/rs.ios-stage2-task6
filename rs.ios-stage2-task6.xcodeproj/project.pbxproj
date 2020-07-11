@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E6024B8CEF300A06F32 /* AppDelegate.m */; };
-		32639E6A24B8CEF300A06F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6824B8CEF300A06F32 /* Main.storyboard */; };
 		32639E6C24B8CEF300A06F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6B24B8CEF300A06F32 /* Assets.xcassets */; };
 		32639E7224B8CEF300A06F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7124B8CEF300A06F32 /* main.m */; };
 		32639E7924B8D19400A06F32 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E7824B8D19400A06F32 /* Icons.xcassets */; };
 		32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7B24B8D37100A06F32 /* RSViewController.m */; };
 		32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */; };
+		32792FF824B9C7B600A22FCB /* RSAnimatedTriangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FF724B9C7B600A22FCB /* RSAnimatedTriangleViewController.m */; };
+		32792FFC24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FFB24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m */; };
+		32792FFF24B9E34700A22FCB /* RSAnimatedSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FFE24B9E34700A22FCB /* RSAnimatedSquareViewController.m */; };
+		3279300224B9E70600A22FCB /* RSAnimatedCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279300124B9E70600A22FCB /* RSAnimatedCircleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32639E5C24B8CEF300A06F32 /* rs.ios-stage2-task6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rs.ios-stage2-task6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32639E5F24B8CEF300A06F32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32639E6024B8CEF300A06F32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		32639E6924B8CEF300A06F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32639E6B24B8CEF300A06F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32639E7024B8CEF300A06F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32639E7124B8CEF300A06F32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -29,6 +31,14 @@
 		32639E7B24B8D37100A06F32 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
 		32639E7D24B8D60B00A06F32 /* UIColor+CustomColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColor.h"; sourceTree = "<group>"; };
 		32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColor.m"; sourceTree = "<group>"; };
+		32792FF624B9C7B600A22FCB /* RSAnimatedTriangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAnimatedTriangleViewController.h; sourceTree = "<group>"; };
+		32792FF724B9C7B600A22FCB /* RSAnimatedTriangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAnimatedTriangleViewController.m; sourceTree = "<group>"; };
+		32792FFA24B9E1FF00A22FCB /* RSAnimatedFigureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAnimatedFigureViewController.h; sourceTree = "<group>"; };
+		32792FFB24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAnimatedFigureViewController.m; sourceTree = "<group>"; };
+		32792FFD24B9E34700A22FCB /* RSAnimatedSquareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAnimatedSquareViewController.h; sourceTree = "<group>"; };
+		32792FFE24B9E34700A22FCB /* RSAnimatedSquareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAnimatedSquareViewController.m; sourceTree = "<group>"; };
+		3279300024B9E70600A22FCB /* RSAnimatedCircleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAnimatedCircleViewController.h; sourceTree = "<group>"; };
+		3279300124B9E70600A22FCB /* RSAnimatedCircleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAnimatedCircleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +75,7 @@
 				32639E6024B8CEF300A06F32 /* AppDelegate.m */,
 				32639E7A24B8D37100A06F32 /* RSViewController.h */,
 				32639E7B24B8D37100A06F32 /* RSViewController.m */,
-				32639E6824B8CEF300A06F32 /* Main.storyboard */,
+				32792FF924B9E1B000A22FCB /* animated-figures */,
 				32639E6B24B8CEF300A06F32 /* Assets.xcassets */,
 				32639E7024B8CEF300A06F32 /* Info.plist */,
 				32639E7124B8CEF300A06F32 /* main.m */,
@@ -82,6 +92,21 @@
 				32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */,
 			);
 			path = categories;
+			sourceTree = "<group>";
+		};
+		32792FF924B9E1B000A22FCB /* animated-figures */ = {
+			isa = PBXGroup;
+			children = (
+				32792FF624B9C7B600A22FCB /* RSAnimatedTriangleViewController.h */,
+				32792FF724B9C7B600A22FCB /* RSAnimatedTriangleViewController.m */,
+				32792FFD24B9E34700A22FCB /* RSAnimatedSquareViewController.h */,
+				32792FFE24B9E34700A22FCB /* RSAnimatedSquareViewController.m */,
+				3279300024B9E70600A22FCB /* RSAnimatedCircleViewController.h */,
+				3279300124B9E70600A22FCB /* RSAnimatedCircleViewController.m */,
+				32792FFA24B9E1FF00A22FCB /* RSAnimatedFigureViewController.h */,
+				32792FFB24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m */,
+			);
+			path = "animated-figures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +168,6 @@
 			files = (
 				32639E6C24B8CEF300A06F32 /* Assets.xcassets in Resources */,
 				32639E7924B8D19400A06F32 /* Icons.xcassets in Resources */,
-				32639E6A24B8CEF300A06F32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,24 +179,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */,
+				3279300224B9E70600A22FCB /* RSAnimatedCircleViewController.m in Sources */,
 				32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */,
+				32792FF824B9C7B600A22FCB /* RSAnimatedTriangleViewController.m in Sources */,
 				32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */,
+				32792FFC24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m in Sources */,
 				32639E7224B8CEF300A06F32 /* main.m in Sources */,
+				32792FFF24B9E34700A22FCB /* RSAnimatedSquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		32639E6824B8CEF300A06F32 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32639E6924B8CEF300A06F32 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		32639E7324B8CEF300A06F32 /* Debug */ = {
@@ -292,7 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4634FD8JW;
 				INFOPLIST_FILE = "rs.ios-stage2-task6/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4634FD8JW;
 				INFOPLIST_FILE = "rs.ios-stage2-task6/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
