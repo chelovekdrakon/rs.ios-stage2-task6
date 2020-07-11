@@ -38,17 +38,17 @@
     triangleVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [NSLayoutConstraint activateConstraints:@[
-        [triangleVC.view.bottomAnchor constraintEqualToAnchor:self.view.centerYAnchor],
         [triangleVC.view.widthAnchor constraintEqualToConstant:triangleVC.figureSize],
         [triangleVC.view.heightAnchor constraintEqualToConstant:triangleVC.figureSize],
+        [triangleVC.view.bottomAnchor constraintEqualToAnchor:self.view.centerYAnchor],
     ]];
     if (@available(iOS 11.0, *)) {
         [NSLayoutConstraint activateConstraints:@[
-            [triangleVC.view.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor constant:-50.0f],
+            [triangleVC.view.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-50.0f],
         ]];
     } else {
         [NSLayoutConstraint activateConstraints:@[
-            [triangleVC.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-50.0f],
+            [triangleVC.view.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-50.0f],
         ]];
     }
     
@@ -86,11 +86,11 @@
     
     if (@available(iOS 11.0, *)) {
         [NSLayoutConstraint activateConstraints:@[
-            [circleVC.view.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor constant:50.0f],
+            [circleVC.view.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:50.0f],
         ]];
     } else {
         [NSLayoutConstraint activateConstraints:@[
-            [circleVC.view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:50.0f],
+            [circleVC.view.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:50.0f],
         ]];
     }
     
@@ -124,6 +124,59 @@
         [titleLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
         [titleLabel.centerYAnchor constraintEqualToAnchor:titleWrapperView.centerYAnchor],
     ]];
+    
+    
+    // Button
+    
+    UIView *buttonWrapperView = [[UIView alloc] init];
+    buttonWrapperView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:buttonWrapperView];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [buttonWrapperView.topAnchor constraintEqualToAnchor:circleVC.view.bottomAnchor],
+    ]];
+    if (@available(iOS 11.0, *)) {
+        [NSLayoutConstraint activateConstraints:@[
+            [buttonWrapperView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor],
+            [buttonWrapperView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
+            [buttonWrapperView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
+        ]];
+    } else {
+        [NSLayoutConstraint activateConstraints:@[
+            [buttonWrapperView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+            [buttonWrapperView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+            [buttonWrapperView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+        ]];
+    }
+    
+    UIButton *button = [[UIButton alloc] init];
+    button.backgroundColor = [UIColor yellowColor];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]];
+    [button setTitle:@"START" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [buttonWrapperView addSubview:button];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [button.heightAnchor constraintEqualToConstant:55.0f],
+        [button.leadingAnchor constraintEqualToAnchor:buttonWrapperView.leadingAnchor constant:55.0f],
+        [button.centerXAnchor constraintEqualToAnchor:buttonWrapperView.centerXAnchor],
+        [button.centerYAnchor constraintEqualToAnchor:buttonWrapperView.centerYAnchor],
+        [button.trailingAnchor constraintEqualToAnchor:buttonWrapperView.trailingAnchor constant:-55.0f],
+    ]];
+    
+    button.layer.cornerRadius = 27.5f;
+    
+    [button addTarget:self action:@selector(handleButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - Event Handlers
+
+- (void)handleButtonPress:(UIButton *)button {
+    NSLog(@"button");
 }
 
 #pragma mark - UI Elements Creators

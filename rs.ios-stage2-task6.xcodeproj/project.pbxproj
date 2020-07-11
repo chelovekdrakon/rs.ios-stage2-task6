@@ -75,12 +75,12 @@
 				32639E6024B8CEF300A06F32 /* AppDelegate.m */,
 				32639E7A24B8D37100A06F32 /* RSViewController.h */,
 				32639E7B24B8D37100A06F32 /* RSViewController.m */,
-				32792FF924B9E1B000A22FCB /* animated-figures */,
 				32639E6B24B8CEF300A06F32 /* Assets.xcassets */,
 				32639E7024B8CEF300A06F32 /* Info.plist */,
 				32639E7124B8CEF300A06F32 /* main.m */,
 				32639E7824B8D19400A06F32 /* Icons.xcassets */,
 				32639E8024B8D61200A06F32 /* categories */,
+				32792FF924B9E1B000A22FCB /* animated-figures */,
 			);
 			path = "rs.ios-stage2-task6";
 			sourceTree = "<group>";
