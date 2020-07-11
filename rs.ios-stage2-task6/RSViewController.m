@@ -7,12 +7,20 @@
 //
 
 #import "RSViewController.h"
+// animated figures
 #import "RSAnimatedSquareViewController.h"
 #import "RSAnimatedCircleViewController.h"
 #import "RSAnimatedTriangleViewController.h"
+//tabs
+#import "RSHomeTabViewController.h"
+#import "RSInfoTabViewController.h"
+#import "RSGalleryTabViewController.h"
+// categories
+#import "UIColor+CustomColor.h"
+
 
 @interface RSViewController ()
-
+@property (nonatomic, strong) UITabBarController *tabBarController;
 @end
 
 @implementation RSViewController
@@ -20,11 +28,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.hidden = YES;
-    
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self layoutScreenElements];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+        NSFontAttributeName: [UIFont systemFontOfSize:18 weight:UIFontWeightSemibold],
+        NSForegroundColorAttributeName: [UIColor blackColor],
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)layoutScreenElements {
@@ -176,7 +196,32 @@
 #pragma mark - Event Handlers
 
 - (void)handleButtonPress:(UIButton *)button {
-    NSLog(@"button");
+    if (self.tabBarController == nil) {
+        RSInfoTabViewController *infoTabVC = [[RSInfoTabViewController alloc] init];
+        infoTabVC.tabBarItem.image = [UIImage imageNamed:@"info_unselected"];
+        infoTabVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+        infoTabVC.tabBarItem.selectedImage = [UIImage imageNamed:@"info_selected"];
+        
+        RSGalleryTabViewController *galleryTabVC = [[RSGalleryTabViewController alloc] init];
+        galleryTabVC.tabBarItem.image = [UIImage imageNamed:@"gallery_unselected"];
+        galleryTabVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+        galleryTabVC.tabBarItem.selectedImage = [UIImage imageNamed:@"gallery_selected"];
+        
+        RSHomeTabViewController *homeTabVC = [[RSHomeTabViewController alloc] init];
+        homeTabVC.tabBarItem.image = [UIImage imageNamed:@"home_unselected"];
+        homeTabVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+        homeTabVC.tabBarItem.selectedImage = [UIImage imageNamed:@"home_selected"];
+        
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        tabBarController.tabBar.tintColor = [UIColor blackColor];
+        tabBarController.selectedIndex = 1;
+        tabBarController.navigationItem.hidesBackButton = YES;
+        tabBarController.viewControllers = @[infoTabVC, galleryTabVC, homeTabVC];
+        
+        self.tabBarController = tabBarController;
+    }
+    
+    [self.navigationController pushViewController:self.tabBarController animated:YES];
 }
 
 #pragma mark - UI Elements Creators

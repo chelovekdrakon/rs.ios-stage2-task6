@@ -17,6 +17,9 @@
 		32792FFC24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FFB24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m */; };
 		32792FFF24B9E34700A22FCB /* RSAnimatedSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FFE24B9E34700A22FCB /* RSAnimatedSquareViewController.m */; };
 		3279300224B9E70600A22FCB /* RSAnimatedCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279300124B9E70600A22FCB /* RSAnimatedCircleViewController.m */; };
+		3279300524BA17DB00A22FCB /* RSInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279300424BA17DB00A22FCB /* RSInfoTabViewController.m */; };
+		32C0DA0C24BA3E4D002601CA /* RSGalleryTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */; };
+		32C0DA0F24BA3E77002601CA /* RSHomeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,12 @@
 		32792FFE24B9E34700A22FCB /* RSAnimatedSquareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAnimatedSquareViewController.m; sourceTree = "<group>"; };
 		3279300024B9E70600A22FCB /* RSAnimatedCircleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAnimatedCircleViewController.h; sourceTree = "<group>"; };
 		3279300124B9E70600A22FCB /* RSAnimatedCircleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAnimatedCircleViewController.m; sourceTree = "<group>"; };
+		3279300324BA17DB00A22FCB /* RSInfoTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSInfoTabViewController.h; sourceTree = "<group>"; };
+		3279300424BA17DB00A22FCB /* RSInfoTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSInfoTabViewController.m; sourceTree = "<group>"; };
+		32C0DA0A24BA3E4D002601CA /* RSGalleryTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSGalleryTabViewController.h; sourceTree = "<group>"; };
+		32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSGalleryTabViewController.m; sourceTree = "<group>"; };
+		32C0DA0D24BA3E77002601CA /* RSHomeTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSHomeTabViewController.h; sourceTree = "<group>"; };
+		32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSHomeTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,7 @@
 				32639E7824B8D19400A06F32 /* Icons.xcassets */,
 				32639E8024B8D61200A06F32 /* categories */,
 				32792FF924B9E1B000A22FCB /* animated-figures */,
+				3279300624BA17E000A22FCB /* tabs */,
 			);
 			path = "rs.ios-stage2-task6";
 			sourceTree = "<group>";
@@ -107,6 +117,19 @@
 				32792FFB24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m */,
 			);
 			path = "animated-figures";
+			sourceTree = "<group>";
+		};
+		3279300624BA17E000A22FCB /* tabs */ = {
+			isa = PBXGroup;
+			children = (
+				3279300324BA17DB00A22FCB /* RSInfoTabViewController.h */,
+				3279300424BA17DB00A22FCB /* RSInfoTabViewController.m */,
+				32C0DA0A24BA3E4D002601CA /* RSGalleryTabViewController.h */,
+				32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */,
+				32C0DA0D24BA3E77002601CA /* RSHomeTabViewController.h */,
+				32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */,
+			);
+			path = tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,10 +203,13 @@
 			files = (
 				32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */,
 				3279300224B9E70600A22FCB /* RSAnimatedCircleViewController.m in Sources */,
+				32C0DA0C24BA3E4D002601CA /* RSGalleryTabViewController.m in Sources */,
 				32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */,
 				32792FF824B9C7B600A22FCB /* RSAnimatedTriangleViewController.m in Sources */,
 				32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */,
 				32792FFC24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m in Sources */,
+				32C0DA0F24BA3E77002601CA /* RSHomeTabViewController.m in Sources */,
+				3279300524BA17DB00A22FCB /* RSInfoTabViewController.m in Sources */,
 				32639E7224B8CEF300A06F32 /* main.m in Sources */,
 				32792FFF24B9E34700A22FCB /* RSAnimatedSquareViewController.m in Sources */,
 			);
