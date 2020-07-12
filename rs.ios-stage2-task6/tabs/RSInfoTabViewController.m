@@ -14,6 +14,7 @@
 @interface RSInfoTabViewController () <UITableViewDelegate, UITableViewDataSource, PHPhotoLibraryChangeObserver>
 @property (nonatomic, strong) NSString *cellId;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSDateFormatter *durationDateFormatter;
 @property (nonatomic, strong) PHFetchResult<PHAsset *> *dataSource;
 @property (nonatomic, strong) PHCachingImageManager *imageManager;
 @end
@@ -24,6 +25,12 @@
     self = [super init];
     if (self) {
         _cellId = @"cellId";
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"mm:ss"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+        
+        _durationDateFormatter = dateFormatter;
     }
     
     return self;
@@ -110,26 +117,38 @@
     cell.textLabel.text = fileName;
     cell.textLabel.font = [UIFont systemFontOfSize:17.0f weight:UIFontWeightSemibold];
     
-    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    NSMutableString *subTitleText = [[NSMutableString alloc] init];
+    NSTextAttachment *attachmentImage = [[NSTextAttachment alloc] init];
+    NSMutableAttributedString *subTitle= [[NSMutableAttributedString alloc] init];
+    
     switch (asset.mediaType) {
-        case PHAssetMediaTypeImage:
-            attachment.image = [UIImage imageNamed:@"image"];
+        case PHAssetMediaTypeImage: {
+            attachmentImage.image = [UIImage imageNamed:@"image"];
+            [subTitleText appendString:[NSString stringWithFormat:@" %@x%@", @(asset.pixelWidth), @(asset.pixelHeight)]];
             break;
-        case PHAssetMediaTypeVideo:
-            attachment.image = [UIImage imageNamed:@"video"];
+        }
+        case PHAssetMediaTypeVideo: {
+            attachmentImage.image = [UIImage imageNamed:@"video"];
+            NSDate *durationDate = [NSDate dateWithTimeIntervalSince1970:asset.duration];
+            [subTitleText appendString:[NSString stringWithFormat:@" %@x%@, %@ sec", @(asset.pixelWidth), @(asset.pixelHeight), [self.durationDateFormatter stringFromDate:durationDate]]];
             break;
-        case PHAssetMediaTypeAudio:
-            attachment.image = [UIImage imageNamed:@"audio"];
+        }
+        case PHAssetMediaTypeAudio: {
+            attachmentImage.image = [UIImage imageNamed:@"audio"];
+            NSDate *durationDate = [NSDate dateWithTimeIntervalSince1970:asset.duration];
+            [subTitleText appendString:[NSString stringWithFormat:@" %@", [self.durationDateFormatter stringFromDate:durationDate]]];
             break;
-        default:
-            attachment.image = [UIImage imageNamed:@"other"];
+        }
+        default: {
+            attachmentImage.image = [UIImage imageNamed:@"other"];
             break;
+        }
     }
 
-    NSAttributedString *subTitleImage = [NSAttributedString attributedStringWithAttachment:attachment];
-    NSAttributedString *subTitleText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@x%@", @(asset.pixelWidth), @(asset.pixelHeight)]];
-    NSMutableAttributedString *subTitle= [[NSMutableAttributedString alloc] initWithAttributedString:subTitleImage];
-    [subTitle appendAttributedString:subTitleText];
+    NSAttributedString *subTitleImage = [NSAttributedString attributedStringWithAttachment:attachmentImage];
+    
+    [subTitle appendAttributedString:subTitleImage];
+    [subTitle appendAttributedString:[[NSMutableAttributedString alloc] initWithString:subTitleText]];
     
     [subTitle addAttribute:NSBaselineOffsetAttributeName value:@(6) range:NSMakeRange(subTitleImage.length, subTitleText.length)];
     
