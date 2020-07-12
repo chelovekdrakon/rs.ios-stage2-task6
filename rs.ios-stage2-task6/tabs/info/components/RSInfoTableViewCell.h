@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RSInfoTableViewCell : UITableViewCell
 @property(nonatomic, strong) PHAsset *asset;
 
++ (CGSize)cellSize;
 + (NSString *)cellId;
 @end
 

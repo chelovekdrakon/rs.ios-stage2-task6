@@ -17,6 +17,10 @@
 
 @implementation RSInfoTableViewCell
 
++ (CGSize)cellSize {
+    return CGSizeMake(75.0f, 75.0f);
+}
+
 + (NSString *)cellId {
     return @"RSInfoTableViewCell";
 }
@@ -49,7 +53,7 @@
     imageRequiestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
     
     [self.photosService.imageManager requestImageForAsset:asset
-                                 targetSize:CGSizeMake(75.0f, 75.0f)
+                                 targetSize:[RSInfoTableViewCell cellSize]
                                 contentMode:PHImageContentModeAspectFill
                                     options:imageRequiestOptions
                               resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
@@ -97,10 +101,6 @@
     [subTitle appendAttributedString:[[NSMutableAttributedString alloc] initWithString:subTitleText]];
     
     [subTitle addAttribute:NSBaselineOffsetAttributeName value:@(6) range:NSMakeRange(subTitleImage.length, subTitleText.length)];
-    
-//    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-//    paragraphStyle.alignment = NSTextAlignmentCenter;
-//    [subTitle addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, subTitleText.length)];
 
     self.detailTextLabel.attributedText = subTitle;
     
