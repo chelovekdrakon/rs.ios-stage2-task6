@@ -34,6 +34,14 @@
                            alpha:1.0f];
 }
 
+// <0x979797>
++ (UIColor *)lightGrayColor {
+    return [UIColor colorWithRed:151.0f/255.0f
+                           green:151.0f/255.0f
+                            blue:151.0f/255.0f
+                           alpha:1.0f];
+}
+
 // <0x34C1A1>
 + (UIColor *)greenColor {
     return [UIColor colorWithRed:52.0f/255.0f
