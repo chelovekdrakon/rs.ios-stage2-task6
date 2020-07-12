@@ -10,6 +10,7 @@
 #import "UIColor+CustomColor.h"
 #import "RSInfoTableViewCell.h"
 #import "RSInfoTabViewController.h"
+#import "RSImageInfoViewController.h"
 
 @interface RSInfoTabViewController () <UITableViewDelegate, UITableViewDataSource, RSPhotosLibraryChangeObserver>
 @property (nonatomic, strong) UITableView *tableView;
@@ -88,6 +89,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PHAsset *asset = self.photosService.fetchResult[indexPath.row];
+    
+    RSImageInfoViewController *imageModal = [[RSImageInfoViewController alloc] initWithPHAsset:asset];
+    imageModal.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    
+    [self.tabBarController.navigationController pushViewController:imageModal animated:YES];
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - RSPhotosLibrary Change Observer
