@@ -8,22 +8,14 @@
 
 #import "RSPhotosService.h"
 #import "RSGalleryTabViewController.h"
+#import "RSGalleryCollectionViewCell.h"
 
 @interface RSGalleryTabViewController () <RSPhotosLibraryChangeObserver, UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong) NSString *cellId;
 @property (nonatomic, strong) RSPhotosService *photosService;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end
 
 @implementation RSGalleryTabViewController
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _cellId = @"cellId";
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +31,7 @@
     collectionView.dataSource = self;
     collectionView.delegate = self;
     
-    [collectionView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:self.cellId];
+    [collectionView registerClass:RSGalleryCollectionViewCell.class forCellWithReuseIdentifier:[RSGalleryCollectionViewCell cellId]];
     
     [self.view addSubview:collectionView];
     
@@ -77,24 +69,11 @@
 #pragma mark - UICollectionView Data Source
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellId forIndexPath:indexPath];
+    RSGalleryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[RSGalleryCollectionViewCell cellId] forIndexPath:indexPath];
     
     PHAsset *asset = self.photosService.fetchResult[indexPath.row];
-    
-    PHImageRequestOptions *imageRequiestOptions = [[PHImageRequestOptions alloc] init];
-    imageRequiestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
-    
-    [self.photosService.imageManager requestImageForAsset:asset
-                                 targetSize:CGSizeMake(118.0f, 118.0f)
-                                contentMode:PHImageContentModeAspectFill
-                                    options:imageRequiestOptions
-                              resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-        if (result) {
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:result];
-            [cell.contentView addSubview:imageView];
-        }
-    }];
-    
+    cell.asset = asset;
+
     return cell;
 }
 

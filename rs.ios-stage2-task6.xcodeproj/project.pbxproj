@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		325CB46024BB580900FB5ECF /* RSGalleryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 325CB45F24BB580900FB5ECF /* RSGalleryCollectionViewCell.m */; };
 		32639E6124B8CEF300A06F32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E6024B8CEF300A06F32 /* AppDelegate.m */; };
 		32639E6C24B8CEF300A06F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E6B24B8CEF300A06F32 /* Assets.xcassets */; };
 		32639E7224B8CEF300A06F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7124B8CEF300A06F32 /* main.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		325CB45E24BB580900FB5ECF /* RSGalleryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSGalleryCollectionViewCell.h; sourceTree = "<group>"; };
+		325CB45F24BB580900FB5ECF /* RSGalleryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSGalleryCollectionViewCell.m; sourceTree = "<group>"; };
 		32639E5C24B8CEF300A06F32 /* rs.ios-stage2-task6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rs.ios-stage2-task6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32639E5F24B8CEF300A06F32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32639E6024B8CEF300A06F32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		325CB45C24BB558600FB5ECF /* gallery */ = {
 			isa = PBXGroup;
 			children = (
+				325CB46124BB580C00FB5ECF /* components */,
 				32C0DA0A24BA3E4D002601CA /* RSGalleryTabViewController.h */,
 				32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */,
 			);
@@ -96,6 +100,15 @@
 				32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		325CB46124BB580C00FB5ECF /* components */ = {
+			isa = PBXGroup;
+			children = (
+				325CB45E24BB580900FB5ECF /* RSGalleryCollectionViewCell.h */,
+				325CB45F24BB580900FB5ECF /* RSGalleryCollectionViewCell.m */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		32639E5324B8CEF300A06F32 = {
@@ -268,6 +281,7 @@
 				3279300224B9E70600A22FCB /* RSAnimatedCircleViewController.m in Sources */,
 				32C0DA0C24BA3E4D002601CA /* RSGalleryTabViewController.m in Sources */,
 				32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */,
+				325CB46024BB580900FB5ECF /* RSGalleryCollectionViewCell.m in Sources */,
 				3276327D24BB3CE3009052FF /* RSPhotosService.m in Sources */,
 				32792FF824B9C7B600A22FCB /* RSAnimatedTriangleViewController.m in Sources */,
 				32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */,

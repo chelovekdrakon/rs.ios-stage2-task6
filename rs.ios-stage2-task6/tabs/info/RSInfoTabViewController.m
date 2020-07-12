@@ -12,21 +12,11 @@
 #import "RSInfoTabViewController.h"
 
 @interface RSInfoTabViewController () <UITableViewDelegate, UITableViewDataSource, RSPhotosLibraryChangeObserver>
-@property (nonatomic, strong) NSString *cellId;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) RSPhotosService *photosService;
 @end
 
 @implementation RSInfoTabViewController
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _cellId = @"cellId";
-    }
-    
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +29,7 @@
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.backgroundColor = [UIColor whiteColor];
-    [tableView registerClass:RSInfoTableViewCell.class forCellReuseIdentifier:self.cellId];
+    [tableView registerClass:RSInfoTableViewCell.class forCellReuseIdentifier:[RSInfoTableViewCell cellId]];
     
     [self.view addSubview:tableView];
     
@@ -82,7 +72,7 @@
 #pragma mark - UITableView Data Source
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    RSInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellId forIndexPath:indexPath];
+    RSInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[RSInfoTableViewCell cellId] forIndexPath:indexPath];
     
     PHAsset *asset = self.photosService.fetchResult[indexPath.row];    
     cell.asset = asset;
