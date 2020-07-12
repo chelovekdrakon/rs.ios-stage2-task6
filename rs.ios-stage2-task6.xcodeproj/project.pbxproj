@@ -70,6 +70,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		325CB45B24BB557700FB5ECF /* info */ = {
+			isa = PBXGroup;
+			children = (
+				3276328224BB4EA4009052FF /* components */,
+				3279300324BA17DB00A22FCB /* RSInfoTabViewController.h */,
+				3279300424BA17DB00A22FCB /* RSInfoTabViewController.m */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		325CB45C24BB558600FB5ECF /* gallery */ = {
+			isa = PBXGroup;
+			children = (
+				32C0DA0A24BA3E4D002601CA /* RSGalleryTabViewController.h */,
+				32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */,
+			);
+			path = gallery;
+			sourceTree = "<group>";
+		};
+		325CB45D24BB558F00FB5ECF /* home */ = {
+			isa = PBXGroup;
+			children = (
+				32C0DA0D24BA3E77002601CA /* RSHomeTabViewController.h */,
+				32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
 		32639E5324B8CEF300A06F32 = {
 			isa = PBXGroup;
 			children = (
@@ -152,13 +180,9 @@
 		3279300624BA17E000A22FCB /* tabs */ = {
 			isa = PBXGroup;
 			children = (
-				3276328224BB4EA4009052FF /* components */,
-				3279300324BA17DB00A22FCB /* RSInfoTabViewController.h */,
-				3279300424BA17DB00A22FCB /* RSInfoTabViewController.m */,
-				32C0DA0A24BA3E4D002601CA /* RSGalleryTabViewController.h */,
-				32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */,
-				32C0DA0D24BA3E77002601CA /* RSHomeTabViewController.h */,
-				32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */,
+				325CB45B24BB557700FB5ECF /* info */,
+				325CB45C24BB558600FB5ECF /* gallery */,
+				325CB45D24BB558F00FB5ECF /* home */,
 			);
 			path = tabs;
 			sourceTree = "<group>";
