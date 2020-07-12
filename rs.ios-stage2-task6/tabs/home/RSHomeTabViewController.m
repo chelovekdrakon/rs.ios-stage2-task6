@@ -251,7 +251,7 @@
 }
 
 - (void)goToStart:(UIButton *)button {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.tabBarController.navigationController popViewControllerAnimated:YES];
 }
 
 

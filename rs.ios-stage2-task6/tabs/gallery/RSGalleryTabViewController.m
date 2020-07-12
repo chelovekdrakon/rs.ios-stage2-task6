@@ -7,6 +7,7 @@
 //
 
 #import "RSPhotosService.h"
+#import "RSImageInfoViewController.h"
 #import "RSGalleryTabViewController.h"
 #import "RSGalleryCollectionViewCell.h"
 
@@ -82,6 +83,17 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.photosService.fetchResult.count;
+}
+
+#pragma mark - UICollectionView Delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    PHAsset *asset = self.photosService.fetchResult[indexPath.row];
+    
+    RSImageInfoViewController *imageModal = [[RSImageInfoViewController alloc] initWithPHAsset:asset];
+    imageModal.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    
+    [self.tabBarController.navigationController pushViewController:imageModal animated:YES];
 }
 
 #pragma mark - RSPhotosLibrary Change Observer
