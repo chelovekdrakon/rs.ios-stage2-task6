@@ -216,9 +216,9 @@
         
         UITabBarController *tabBarController = [[UITabBarController alloc] init];
         tabBarController.tabBar.tintColor = [UIColor blackColor];
-//        tabBarController.selectedIndex = 1;
         tabBarController.navigationItem.hidesBackButton = YES;
         tabBarController.viewControllers = @[infoTabVC, galleryTabVC, homeTabVC];
+        tabBarController.selectedIndex = 1;
         
         self.tabBarController = tabBarController;
     }

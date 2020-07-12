@@ -17,7 +17,6 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) RSPhotosService *photosService;
 @property (nonatomic, strong) NSDateFormatter *durationDateFormatter;
-@property (nonatomic, strong) PHCachingImageManager *imageManager;
 @end
 
 @implementation RSInfoTabViewController
@@ -73,7 +72,6 @@
         [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]
     ];
     self.photosService = [RSPhotosService sharedInstance];
-    self.imageManager = [[PHCachingImageManager alloc] init];
     
     [self.photosService registerPhotosLibraryChangeObserver:self];
 }
@@ -100,7 +98,7 @@
     PHImageRequestOptions *imageRequiestOptions = [[PHImageRequestOptions alloc] init];
     imageRequiestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
     
-    [self.imageManager requestImageForAsset:asset
+    [self.photosService.imageManager requestImageForAsset:asset
                                  targetSize:CGSizeMake(75.0f, 75.0f)
                                 contentMode:PHImageContentModeAspectFill
                                     options:imageRequiestOptions

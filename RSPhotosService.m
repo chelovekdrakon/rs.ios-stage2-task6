@@ -11,8 +11,9 @@
 
 @interface RSPhotosService () <PHPhotoLibraryChangeObserver>
 @property (nonatomic, strong, readwrite) PHFetchResult<PHAsset *> *fetchResult;
+@property (nonatomic, strong, readwrite) PHCachingImageManager *imageManager;
+
 @property (nonatomic, strong) NSMutableArray<id<RSPhotosLibraryChangeObserver>> *photosLibraryChangesObservers;
-@property (nonatomic, strong) PHCachingImageManager *imageManager;
 @end
 
 
@@ -22,6 +23,8 @@
     self = [super init];
     
     if (self) {
+        self.imageManager = [[PHCachingImageManager alloc] init];
+        
         PHFetchOptions *options = [[PHFetchOptions alloc] init];
         options.sortDescriptors = @[
             [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]

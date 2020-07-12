@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
+@property (nonatomic, strong, readonly) PHCachingImageManager *imageManager;
 @property (nonatomic, strong, readonly) PHFetchResult<PHAsset *> *fetchResult;
 
 - (void)registerPhotosLibraryChangeObserver:(id<RSPhotosLibraryChangeObserver>)observer;
