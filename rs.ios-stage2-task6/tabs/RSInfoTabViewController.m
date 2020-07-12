@@ -8,14 +8,15 @@
 
 #import <Photos/Photos.h>
 
-#import "RSInfoTabViewController.h"
+#import "RSPhotosService.h"
 #import "UIColor+CustomColor.h"
+#import "RSInfoTabViewController.h"
 
-@interface RSInfoTabViewController () <UITableViewDelegate, UITableViewDataSource, PHPhotoLibraryChangeObserver>
+@interface RSInfoTabViewController () <UITableViewDelegate, UITableViewDataSource, RSPhotosLibraryChangeObserver>
 @property (nonatomic, strong) NSString *cellId;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) RSPhotosService *photosService;
 @property (nonatomic, strong) NSDateFormatter *durationDateFormatter;
-@property (nonatomic, strong) PHFetchResult<PHAsset *> *dataSource;
 @property (nonatomic, strong) PHCachingImageManager *imageManager;
 @end
 
@@ -66,21 +67,19 @@
     }
     
     self.tableView = tableView;
-    
-    PHPhotoLibrary *photoLib = [PHPhotoLibrary sharedPhotoLibrary];
-    [photoLib registerChangeObserver:self];
 
     PHFetchOptions *options = [[PHFetchOptions alloc] init];
     options.sortDescriptors = @[
         [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]
     ];
-    self.dataSource = [PHAsset fetchAssetsWithOptions:options];
+    self.photosService = [RSPhotosService sharedInstance];
     self.imageManager = [[PHCachingImageManager alloc] init];
+    
+    [self.photosService registerPhotosLibraryChangeObserver:self];
 }
 
 - (void)dealloc {
-    PHPhotoLibrary *photoLib = [PHPhotoLibrary sharedPhotoLibrary];
-    [photoLib unregisterChangeObserver:self];
+    [self.photosService unregisterPhotosLibraryChangeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -96,7 +95,7 @@
     bgColorView.backgroundColor = [UIColor yellowHighlightedColor];
     [cell setSelectedBackgroundView:bgColorView];
     
-    PHAsset *asset = self.dataSource[indexPath.row];
+    PHAsset *asset = self.photosService.fetchResult[indexPath.row];
     
     PHImageRequestOptions *imageRequiestOptions = [[PHImageRequestOptions alloc] init];
     imageRequiestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
@@ -163,7 +162,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    return self.photosService.fetchResult.count;
 }
 
 #pragma mark - UITableView Delegate
@@ -172,7 +171,7 @@
     return 80.0f;
 }
 
-#pragma mark - PHPhotoLibrary Change Observer
+#pragma mark - RSPhotosLibrary Change Observer
 
 - (void)photoLibraryDidChange:(nonnull PHChange *)changeInstance {
     NSLog(@"PHChange");

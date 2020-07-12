@@ -13,6 +13,7 @@
 		32639E7924B8D19400A06F32 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32639E7824B8D19400A06F32 /* Icons.xcassets */; };
 		32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7B24B8D37100A06F32 /* RSViewController.m */; };
 		32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */; };
+		3276327D24BB3CE3009052FF /* RSPhotosService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3276327C24BB3CE3009052FF /* RSPhotosService.m */; };
 		32792FF824B9C7B600A22FCB /* RSAnimatedTriangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FF724B9C7B600A22FCB /* RSAnimatedTriangleViewController.m */; };
 		32792FFC24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FFB24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m */; };
 		32792FFF24B9E34700A22FCB /* RSAnimatedSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FFE24B9E34700A22FCB /* RSAnimatedSquareViewController.m */; };
@@ -35,6 +36,8 @@
 		32639E7B24B8D37100A06F32 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
 		32639E7D24B8D60B00A06F32 /* UIColor+CustomColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColor.h"; sourceTree = "<group>"; };
 		32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColor.m"; sourceTree = "<group>"; };
+		3276327B24BB3CE3009052FF /* RSPhotosService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSPhotosService.h; sourceTree = "<group>"; };
+		3276327C24BB3CE3009052FF /* RSPhotosService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSPhotosService.m; sourceTree = "<group>"; };
 		32792FF624B9C7B600A22FCB /* RSAnimatedTriangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAnimatedTriangleViewController.h; sourceTree = "<group>"; };
 		32792FF724B9C7B600A22FCB /* RSAnimatedTriangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAnimatedTriangleViewController.m; sourceTree = "<group>"; };
 		32792FFA24B9E1FF00A22FCB /* RSAnimatedFigureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAnimatedFigureViewController.h; sourceTree = "<group>"; };
@@ -92,9 +95,10 @@
 				32639E7024B8CEF300A06F32 /* Info.plist */,
 				32639E7124B8CEF300A06F32 /* main.m */,
 				32639E7824B8D19400A06F32 /* Icons.xcassets */,
+				3279300624BA17E000A22FCB /* tabs */,
+				3276327E24BB3CEB009052FF /* services */,
 				32639E8024B8D61200A06F32 /* categories */,
 				32792FF924B9E1B000A22FCB /* animated-figures */,
-				3279300624BA17E000A22FCB /* tabs */,
 			);
 			path = "rs.ios-stage2-task6";
 			sourceTree = "<group>";
@@ -106,6 +110,16 @@
 				32639E7E24B8D60B00A06F32 /* UIColor+CustomColor.m */,
 			);
 			path = categories;
+			sourceTree = "<group>";
+		};
+		3276327E24BB3CEB009052FF /* services */ = {
+			isa = PBXGroup;
+			children = (
+				3276327B24BB3CE3009052FF /* RSPhotosService.h */,
+				3276327C24BB3CE3009052FF /* RSPhotosService.m */,
+			);
+			name = services;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		32792FF924B9E1B000A22FCB /* animated-figures */ = {
@@ -217,6 +231,7 @@
 				3279300224B9E70600A22FCB /* RSAnimatedCircleViewController.m in Sources */,
 				32C0DA0C24BA3E4D002601CA /* RSGalleryTabViewController.m in Sources */,
 				32639E7C24B8D37100A06F32 /* RSViewController.m in Sources */,
+				3276327D24BB3CE3009052FF /* RSPhotosService.m in Sources */,
 				32792FF824B9C7B600A22FCB /* RSAnimatedTriangleViewController.m in Sources */,
 				32639E7F24B8D60B00A06F32 /* UIColor+CustomColor.m in Sources */,
 				32792FFC24B9E1FF00A22FCB /* RSAnimatedFigureViewController.m in Sources */,
