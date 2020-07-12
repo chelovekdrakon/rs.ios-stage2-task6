@@ -23,7 +23,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
-    collectionViewLayout.itemSize = CGSizeMake(118.0f, 118.0f);
+    collectionViewLayout.itemSize = [RSGalleryCollectionViewCell cellSize];
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:collectionViewLayout];
     collectionView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -79,6 +79,16 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.photosService.fetchResult.count;
+}
+
+#pragma mark - UICollectionView Delegate
+
+- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 5.0f;
 }
 
 #pragma mark - RSPhotosLibrary Change Observer

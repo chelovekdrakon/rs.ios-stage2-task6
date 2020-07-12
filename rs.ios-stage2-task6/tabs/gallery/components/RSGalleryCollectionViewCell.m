@@ -11,9 +11,15 @@
 
 @interface RSGalleryCollectionViewCell()
 @property (nonatomic, strong) RSPhotosService *photosService;
+
+@property (nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation RSGalleryCollectionViewCell
+
++ (CGSize)cellSize {
+    return CGSizeMake(118.0f, 118.0f);
+}
 
 + (NSString *)cellId {
     return @"RSGalleryCollectionViewCell";
@@ -23,6 +29,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 118.0f, 118.0f)];
+        [self.contentView addSubview:imageView];
+        self.imageView = imageView;
+        
         self.photosService = [RSPhotosService sharedInstance];
     }
     return self;
@@ -40,8 +50,7 @@
                                     options:imageRequiestOptions
                               resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         if (result) {
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:result];
-            [self.contentView addSubview:imageView];
+            self.imageView.image = result;
         }
     }];
     
@@ -49,10 +58,7 @@
 }
 
 - (void)prepareForReuse {
-    NSArray *viewsToRemove = [self subviews];
-    for (UIView *v in viewsToRemove) {
-        [v removeFromSuperview];
-    }
+    self.imageView.image = nil;
 }
 
 @end

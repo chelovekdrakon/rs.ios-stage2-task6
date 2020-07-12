@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RSGalleryCollectionViewCell : UICollectionViewCell
 @property(nonatomic, strong) PHAsset *asset;
 
++ (CGSize)cellSize;
 + (NSString *)cellId;
 @end
 
