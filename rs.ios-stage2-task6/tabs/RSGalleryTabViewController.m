@@ -6,8 +6,6 @@
 //  Copyright © 2020 Фёдор Морев. All rights reserved.
 //
 
-#import <Photos/Photos.h>
-
 #import "RSPhotosService.h"
 #import "RSGalleryTabViewController.h"
 
@@ -29,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
     collectionViewLayout.itemSize = CGSizeMake(118.0f, 118.0f);

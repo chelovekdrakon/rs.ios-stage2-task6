@@ -6,6 +6,7 @@
 //  Copyright © 2020 Фёдор Морев. All rights reserved.
 //
 
+#import <Photos/Photos.h>
 #import <Foundation/Foundation.h>
 
 @protocol RSPhotosLibraryChangeObserver <NSObject>
