@@ -126,7 +126,7 @@
     if (deleted.count == 0 && inserted.count == 0 && changed.count == 0) {
         return;
     } else {
-        // Workaround
+        // TODO: performBatchUpdates
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });

@@ -86,6 +86,7 @@
     PHImageRequestOptions *imageRequiestOptions = [[PHImageRequestOptions alloc] init];
     imageRequiestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
     
+    // TODO: SIZE!
 //    [self.photosService.imageManager requestImageForAsset:self.asset
 //                                               targetSize:CGSizeMake(self.asset.pixelWidth, self.asset.pixelHeight)
 //                                              contentMode:PHImageContentModeAspectFill
@@ -188,7 +189,20 @@
 }
 
 - (void)shareFile:(UIButton *)button {
-    NSLog(@"Share");
+    PHImageRequestOptions *imageRequiestOptions = [[PHImageRequestOptions alloc] init];
+    imageRequiestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
+    
+    [self.photosService.imageManager requestImageDataForAsset:self.asset
+                                                      options:imageRequiestOptions
+                                                resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[imageData] applicationActivities:nil];
+            [self presentViewController:activityVC animated:YES completion:nil];
+        });
+        
+    }];
+    
 }
 
 
