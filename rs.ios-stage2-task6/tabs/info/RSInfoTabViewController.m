@@ -104,8 +104,70 @@
 
 #pragma mark - RSPhotosLibrary Change Observer
 
-- (void)photoLibraryDidChange:(nonnull PHChange *)changeInstance {
-    NSLog(@"PHChange");
+- (void)photoLibraryDidChange:(nonnull PHFetchResultChangeDetails *)changeDetails {    
+    NSMutableArray *deleted = [NSMutableArray array];
+    [changeDetails.removedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:1];
+        [deleted addObject:indexPath];
+    }];
+    
+    NSMutableArray *inserted = [NSMutableArray array];
+    [changeDetails.insertedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:1];
+        [inserted addObject:indexPath];
+    }];
+    
+    NSMutableArray *changed = [NSMutableArray array];
+    [changeDetails.changedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:1];
+        [changed addObject:indexPath];
+    }];
+    
+    if (deleted.count == 0 && inserted.count == 0 && changed.count == 0) {
+        return;
+    } else {
+        // Workaround
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        return;
+    }
+    
+//    typeof(self) __weak weakSelf = self;
+//
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        if (@available(iOS 11.0, *)) {
+//            [weakSelf.tableView performBatchUpdates:^{
+//                if (deleted.count > 0) {
+//                    [weakSelf.tableView deleteRowsAtIndexPaths:deleted withRowAnimation:UITableViewRowAnimationLeft];
+//                }
+//
+//                if (inserted.count > 0) {
+//                    [weakSelf.tableView insertRowsAtIndexPaths:inserted withRowAnimation:UITableViewRowAnimationRight];
+//                }
+//
+//                if (changed.count > 0) {
+//                    [weakSelf.tableView reloadRowsAtIndexPaths:changed withRowAnimation:UITableViewRowAnimationNone];
+//                }
+//            } completion:nil];
+//        } else {
+//            [weakSelf.tableView beginUpdates];
+//
+//            if (deleted.count > 0) {
+//                [weakSelf.tableView deleteRowsAtIndexPaths:deleted withRowAnimation:UITableViewRowAnimationLeft];
+//            }
+//
+//            if (inserted.count > 0) {
+//                [weakSelf.tableView insertRowsAtIndexPaths:inserted withRowAnimation:UITableViewRowAnimationRight];
+//            }
+//
+//            if (changed.count > 0) {
+//                [weakSelf.tableView reloadRowsAtIndexPaths:changed withRowAnimation:UITableViewRowAnimationNone];
+//            }
+//
+//            [weakSelf.tableView endUpdates];
+//        }
+//    });
 }
 
 @end

@@ -98,8 +98,66 @@
 
 #pragma mark - RSPhotosLibrary Change Observer
 
-- (void)photoLibraryDidChange:(nonnull PHChange *)changeInstance {
-    NSLog(@"PHChange");
+- (void)photoLibraryDidChange:(nonnull PHFetchResultChangeDetails *)changeDetails {
+    NSMutableArray *deleted = [NSMutableArray array];
+    [changeDetails.removedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:1];
+        [deleted addObject:indexPath];
+    }];
+    
+    NSMutableArray *inserted = [NSMutableArray array];
+    [changeDetails.insertedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:1];
+        [inserted addObject:indexPath];
+    }];
+    
+    NSMutableArray *changed = [NSMutableArray array];
+    [changeDetails.changedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:1];
+        [changed addObject:indexPath];
+    }];
+    
+    if (deleted.count == 0 && inserted.count == 0 && changed.count == 0) {
+        return;
+    } else {
+        // Workaround
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+        return;
+    }
+    
+//    typeof(self) __weak weakSelf = self;
+//
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        if (@available(iOS 11.0, *)) {
+//            [weakSelf.collectionView performBatchUpdates:^{
+//                if (deleted.count > 0) {
+//                    [weakSelf.collectionView deleteItemsAtIndexPaths:deleted];
+//                }
+//
+//                if (inserted.count > 0) {
+//                    [weakSelf.collectionView insertItemsAtIndexPaths:inserted];
+//                }
+//
+//                if (changed.count > 0) {
+//                    [weakSelf.collectionView reloadItemsAtIndexPaths:changed];
+//                }
+//            } completion:nil];
+//        } else {
+//            if (deleted.count > 0) {
+//                [weakSelf.collectionView deleteItemsAtIndexPaths:deleted];
+//            }
+//
+//            if (inserted.count > 0) {
+//                [weakSelf.collectionView insertItemsAtIndexPaths:inserted];
+//            }
+//
+//            if (changed.count > 0) {
+//                [weakSelf.collectionView reloadItemsAtIndexPaths:changed];
+//            }
+//        }
+//    });
 }
 
 @end

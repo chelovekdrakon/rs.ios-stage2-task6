@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol RSPhotosLibraryChangeObserver <NSObject>
-- (void)photoLibraryDidChange:(PHChange *)changeInstance;
+- (void)photoLibraryDidChange:(PHFetchResultChangeDetails *)changeDetails;
 @end
 
 NS_ASSUME_NONNULL_BEGIN

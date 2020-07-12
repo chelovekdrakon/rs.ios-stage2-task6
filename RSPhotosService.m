@@ -23,13 +23,14 @@
     self = [super init];
     
     if (self) {
-        self.imageManager = [[PHCachingImageManager alloc] init];
+        _photosLibraryChangesObservers = [NSMutableArray array];
+        _imageManager = [[PHCachingImageManager alloc] init];
         
         PHFetchOptions *options = [[PHFetchOptions alloc] init];
         options.sortDescriptors = @[
             [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]
         ];
-        self.fetchResult = [PHAsset fetchAssetsWithOptions:options];
+        _fetchResult = [PHAsset fetchAssetsWithOptions:options];
         
         PHPhotoLibrary *photoLib = [PHPhotoLibrary sharedPhotoLibrary];
         [photoLib registerChangeObserver:self];
@@ -58,9 +59,12 @@
 #pragma mark - PHPhotoLibrary Change Observer
 
 - (void)photoLibraryDidChange:(nonnull PHChange *)changeInstance {
+    PHFetchResultChangeDetails *changeDetails = [changeInstance changeDetailsForFetchResult:self.fetchResult];
+    self.fetchResult = changeDetails.fetchResultAfterChanges;
+    
     for (id<RSPhotosLibraryChangeObserver> observer in self.photosLibraryChangesObservers) {
         if ([observer conformsToProtocol:@protocol(RSPhotosLibraryChangeObserver)]) {
-            [observer photoLibraryDidChange:changeInstance];
+            [observer photoLibraryDidChange:changeDetails];
         }
     }
 }

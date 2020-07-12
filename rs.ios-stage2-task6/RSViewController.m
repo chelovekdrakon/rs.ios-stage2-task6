@@ -41,8 +41,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = YES;
-    
-    [self handleButtonPress:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
