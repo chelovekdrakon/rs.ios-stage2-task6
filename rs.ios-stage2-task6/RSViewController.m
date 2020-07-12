@@ -41,6 +41,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = YES;
+    
+    [self handleButtonPress:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -214,7 +216,7 @@
         
         UITabBarController *tabBarController = [[UITabBarController alloc] init];
         tabBarController.tabBar.tintColor = [UIColor blackColor];
-        tabBarController.selectedIndex = 1;
+//        tabBarController.selectedIndex = 1;
         tabBarController.navigationItem.hidesBackButton = YES;
         tabBarController.viewControllers = @[infoTabVC, galleryTabVC, homeTabVC];
         

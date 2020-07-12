@@ -18,6 +18,7 @@
 		32792FFF24B9E34700A22FCB /* RSAnimatedSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32792FFE24B9E34700A22FCB /* RSAnimatedSquareViewController.m */; };
 		3279300224B9E70600A22FCB /* RSAnimatedCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279300124B9E70600A22FCB /* RSAnimatedCircleViewController.m */; };
 		3279300524BA17DB00A22FCB /* RSInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279300424BA17DB00A22FCB /* RSInfoTabViewController.m */; };
+		329A036D24BA512F002E0BE3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C0DA1124BA5078002601CA /* Photos.framework */; };
 		32C0DA0C24BA3E4D002601CA /* RSGalleryTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */; };
 		32C0DA0F24BA3E77002601CA /* RSHomeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		32C0DA0B24BA3E4D002601CA /* RSGalleryTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSGalleryTabViewController.m; sourceTree = "<group>"; };
 		32C0DA0D24BA3E77002601CA /* RSHomeTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSHomeTabViewController.h; sourceTree = "<group>"; };
 		32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSHomeTabViewController.m; sourceTree = "<group>"; };
+		32C0DA1124BA5078002601CA /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329A036D24BA512F002E0BE3 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 			children = (
 				32639E5E24B8CEF300A06F32 /* rs.ios-stage2-task6 */,
 				32639E5D24B8CEF300A06F32 /* Products */,
+				32C0DA1024BA5078002601CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +134,14 @@
 				32C0DA0E24BA3E77002601CA /* RSHomeTabViewController.m */,
 			);
 			path = tabs;
+			sourceTree = "<group>";
+		};
+		32C0DA1024BA5078002601CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32C0DA1124BA5078002601CA /* Photos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
